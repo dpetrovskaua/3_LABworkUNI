@@ -10,4 +10,7 @@
 # Джерело інформації щодо блоків
 https://minecraft.wiki/w/Category:Blocks
 
+# Документація
+https://dpetrovskaua.github.io/3_LABworkUNI/
+
 # Відеозахист програми
