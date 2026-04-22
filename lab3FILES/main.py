@@ -7,8 +7,7 @@ def main():
         BuildingBlock("Glass", "Ornamental", 0.3, 0.3, True),
         BuildingBlock("Obsidian", "Natural", 50.0, 1200.0, False),
         BuildingBlock("Wood", "Structural", 2.0, 2.0, False),
-        BuildingBlock("Sand", "Natural", 0.5, 0.5, False),
-    ]
+        BuildingBlock("Sand", "Natural", 0.5, 0.5, False),    ]
 
     print("Оригінальний порядок:")
     for block in blocks:
@@ -25,7 +24,7 @@ def main():
     print(f"\nПошук: {target_block}")
     if target_block in blocks:
         index = blocks.index(target_block)
-        print(f"Успіх! Ідентичний блок знайдено за номером: {index}")
+        print(f"Успіх! Ідентичний блок знайдено за номером: {index+1}")
     else:
         print("Блок не знайдено.")
 
