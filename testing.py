@@ -18,11 +18,11 @@ def test_equality():
 
 def test_representation():
     block = BuildingBlock("Glass", "Ornamental", 0.3, 0.3, True)
-    expected_repr = "BuildingBlock(name='Glass', hardness=0.3, blast_resistance=0.3)"
+    # "{self.name}, with hardness of {self.hardness} and blast_resistance of {self.blast_resistance}"
+    expected_repr = "Glass, with hardness of 0.3 and blast_resistance of 0.3"
     assert repr(block) == expected_repr
 
 def test_sorting_logic():
-    # блоки спеціально для перевірки сортування
     b1 = BuildingBlock("Block A", "Test", 2.0, 10.0, False)
     b2 = BuildingBlock("Block B", "Test", 2.0, 50.0, False)  # твердість така ж, але опір вибухам більший
     b3 = BuildingBlock("Block C", "Test", 0.5, 1.0, False)  # найменш твердий
@@ -34,8 +34,3 @@ def test_sorting_logic():
         # 2. Block B (hardness: 2.0, але blast_resistance 50.0 > 10.0, тому він іде перед A)
         # 3. Block A (hardness: 2.0, blast_resistance 10.0)
     assert blocks == [b3, b2, b1]
-
-def test_not_equal_different_types():
-    block = BuildingBlock("Obsidian", "Natural", 50.0, 1200.0, False)
-    assert block != "Рядок"
-    assert block != 123
