@@ -23,14 +23,14 @@ def test_representation():
     assert repr(block) == expected_repr
 
 def test_sorting_logic():
-    b1 = BuildingBlock("Block A", "Test", 2.0, 10.0, False)
-    b2 = BuildingBlock("Block B", "Test", 2.0, 50.0, False)  # твердість така ж, але опір вибухам більший
-    b3 = BuildingBlock("Block C", "Test", 0.5, 1.0, False)  # найменш твердий
+    b1 = BuildingBlock("Block 1", "Test", 2.0, 10.0, False)
+    b2 = BuildingBlock("Block 2", "Test", 2.0, 50.0, False)  # твердість така ж, але опір вибухам більший
+    b3 = BuildingBlock("Block 3", "Test", 0.5, 1.0, False)  # найменш твердий
 
     blocks = [b1, b2, b3]
     blocks.sort(key=lambda b: (b.hardness, -b.blast_resistance))
     # очікуваний порядок:
-        # 1. Block C (найменший hardness: 0.5)
-        # 2. Block B (hardness: 2.0, але blast_resistance 50.0 > 10.0, тому він іде перед A)
-        # 3. Block A (hardness: 2.0, blast_resistance 10.0)
+        # 1. Block 3 (найменший hardness: 0.5)
+        # 2. Block 2 (hardness: 2.0, але blast_resistance 50.0 > 10.0, тому він іде перед A)
+        # 3. Block 1 (hardness: 2.0, blast_resistance 10.0)
     assert blocks == [b3, b2, b1]
