@@ -1,5 +1,5 @@
 class BuildingBlock:
-    def __init__(self, name: str,  category: str, hardness: float, blast_resistance: float, is_transparent: bool): # тип інфи
+    def __init__(self, name: str,  category: str, hardness: float, blast_resistance: float, is_transparent: bool):
         self.name = name
         self.category = category
         self.hardness = hardness  # за зростанням
@@ -7,10 +7,10 @@ class BuildingBlock:
         self.is_transparent = is_transparent
 
     def __repr__(self) -> str:
-        return f"BuildingBlock(name='{self.name}', hardness={self.hardness}, blast_resistance={self.blast_resistance})"
+       return f"{self.name}, with hardness of {self.hardness} and blast_resistance of {self.blast_resistance}"
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, BuildingBlock): # перевірка ідентичності
+        if not isinstance(other, BuildingBlock):
             return NotImplemented
 
         return (self.name == other.name and
